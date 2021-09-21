@@ -1,0 +1,5 @@
+select ROUND(SUM((UnitPrice*Quantity-Discount)),2) as 'SalesOrder' from order_details 
+INNER JOIN orders ON order_details.OrderID = orders.OrderID where orders.ShippedDate 
+between date('1995-05-01') and date('1995-05-31');
+
+select COUNT(OrderID)as 'NoOfOrders' from orders where ShippedDate between date('1995-05-01') and date('1995-05-31');
